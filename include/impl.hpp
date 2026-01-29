@@ -61,7 +61,7 @@ class $modify(MenuLayerObjectFactoryExt, MenuLayer) {
 };
 $on_mod(Loaded) {
     auto factory = GameObjectsFactory::getFactoryManager();
-    factory->m_implID = factory->m_implID.empty() ? geode::getMod()->getID() : factory->m_implID;
+    factory->m_implID = factory->m_implID.empty() ? std::string(geode::getMod()->getID()) : factory->m_implID;
     ALREADY_HAVE_GOF_IMPL = factory->m_implID != getMod()->getID(); 
 }
 
